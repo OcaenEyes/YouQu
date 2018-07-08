@@ -67,5 +67,10 @@ Page({
     wx.switchTab({
       url: '../index',
     })
+  },
+  onMusicPlay:function(){
+    const innerAudioContext = wx.createInnerAudioContext()
+    innerAudioContext.autoplay = true
+    innerAudioContext.src = 'http://rm.sina.com.cn/wm/VZ200908211010598473VK/music/MUSIC0908211041411747.mp3'
   }
 })
