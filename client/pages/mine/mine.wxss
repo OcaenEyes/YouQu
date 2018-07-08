@@ -18,3 +18,27 @@
   top:40rpx;
   background-color: #fff; 
 }
+
+.mine-container{
+  margin-top: 128rpx;
+  display: flex;
+  flex-direction: column;
+}
+.userInfo{
+  flex-direction: row;
+
+  text-align: center;
+}
+.userHeadImg{
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50rpx;
+
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  vertical-align: middle;
+}
+.userName{
+  vertical-align: middle;
+  margin-left: 44rpx;
+}
