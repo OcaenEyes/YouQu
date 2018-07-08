@@ -78,6 +78,8 @@ Page({
   },
   onIndexTap: function(event) {
     var indexId = event.currentTarget.dataset.indexid;
-    console.log(indexId);
+    wx.navigateTo({
+      url: 'indexDetial/indexDetial',
+    })
   }
 })

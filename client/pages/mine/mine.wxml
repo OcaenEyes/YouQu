@@ -2,6 +2,6 @@
 <view class='index-container'>
   <view class='status-bar'></view>
   <view class='index-title'>
-    <text class='index-title-text'>柚趣</text>
+    <text class='index-title-text'>小柚</text>
   </view>
 </view>

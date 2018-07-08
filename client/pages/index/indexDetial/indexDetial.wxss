@@ -1,5 +1,6 @@
 /* pages/index/indexDetial/indexDetial.wxss */
-.status-bar{
+
+.status-bar {
   background-color: white;
   position: fixed;
   width: 100%;
@@ -7,14 +8,131 @@
   top: 0;
   z-index: 1;
 }
-.index-title{
+
+.index-title {
   width: 100%;
   height: 88rpx;
-  text-align: center;
+  z-index: 1;
+  position: fixed;
+  top: 40rpx;
+  background-color: #fff;
+}
+
+.index-title-back {
   line-height: 88rpx;
   font-size: 36rpx;
-  z-index: 1;
-  position:fixed; 
-  top:40rpx;
-  background-color: #fff; 
+  margin-left: 36rpx;
+}
+
+.index-title-text {
+  line-height: 88rpx;
+  font-size: 36rpx;
+  margin-left: 228rpx;
+}
+
+.indexDetial-container {
+  margin-top: 128rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.indexDetial-headImg {
+  width: 100%;
+  height: 440rpx;
+  margin-bottom: 20rpx;
+}
+.audio{
+  width: 102rpx;
+  height: 110rpx;
+  opacity: 0.66;
+  left: 50%;
+  top:300rpx;
+  position: absolute;
+  margin-left: -51rpx;
+}
+.indexDetial-articleInfo {
+  flex-direction: row;
+  margin-left: 24rpx;
+  margin-top: 20rpx;
+}
+
+.indexDetial-articleInfo-authImg {
+  width: 64rpx;
+  height: 64rpx;
+  vertical-align: middle;
+}
+
+.indexDetial-articleInfo-author {
+  font-size: 28rpx;
+  color: #999;
+  font-weight: 300;
+  margin-left: 24rpx;
+  vertical-align: middle;
+}
+
+.indexDetial-articleInfo-status {
+  font-size: 28rpx;
+  color: #999;
+  font-weight: 300;
+  margin-left: 30rpx;
+  vertical-align: middle;
+}
+
+.indexDetial-articleInfo-date {
+  font-size: 28rpx;
+  color: #999;
+  font-weight: 300;
+  margin-left: 24rpx;
+  vertical-align: middle;
+}
+
+.indexDetial-articleTitle {
+  font-size: 36rpx;
+  color: #4b556c;
+  font-weight: 400;
+  margin-left: 24rpx;
+  margin-top: 28rpx;
+  letter-spacing: 1px;
+}
+
+.tool {
+  margin-top: 20rpx;
+}
+
+.tool image {
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.tool-img {
+  float: right;
+  margin-right: 40rpx;
+  vertical-align: middle;
+}
+
+.indexDetial-articleShare {
+  margin-left: 28rpx;
+}
+
+.indexDetial-line {
+  width: 666rpx;
+  height: 1px;
+  background-color: #e5e5e5;
+  position: relative;
+  top: 45rpx;
+  z-index: -1;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle;
+}
+
+.indexDetial-articleDetial{
+  font-size: 28rpx;
+  color: #999;
+  font-weight: 300;
+  margin-left: 24rpx;
+  margin-top: 20rpx;
+  line-height: 48rpx;
+
 }
