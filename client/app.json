@@ -1,12 +1,23 @@
 {
   "pages": [
+    "pages/welcome/welcome",
     "pages/index/index",
-    "pages/welcome/welcome"
-    
-    
+    "pages/mine/mine"
   ],
   "window": {
     "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "柚夏"
+    },
+    {
+      "pagePath": "pages/mine/mine",
+      "text": "我的"
+    }
+    ]
   }
-    
 }
