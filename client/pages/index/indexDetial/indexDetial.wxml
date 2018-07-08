@@ -9,7 +9,7 @@
 
   <view class="indexDetial-container">
     <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531035292705&di=52e407e28ef10c976bccefb4e3983579&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2Fb%2F59af9954af6d0.jpg' class='indexDetial-headImg'></image>
-    <image src='../../../images/music/play.png' class='audio'></image>
+    <image src='../../../images/music/play.png' class='audio' bindtap='onMusicPlay'></image>
     <view class='indexDetial-articleInfo'>
       <image src='../../../images/userHeadImg/3.png' class='indexDetial-articleInfo-authImg'></image>
       <text class='indexDetial-articleInfo-author'>乔克叔叔</text>
