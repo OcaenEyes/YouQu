@@ -22,10 +22,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
-    this.data.indexList = indexsData.indexList;
     this.setData({
-      indexs_key: indexsData.indexList
+      index_key: indexsData.indexList
     });
 
   },
@@ -77,5 +75,9 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+  onIndexTap: function(event) {
+    var indexId = event.currentTarget.dataset.indexid;
+    console.log(indexId);
   }
 })

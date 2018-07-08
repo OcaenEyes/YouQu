@@ -1,0 +1,19 @@
+<template name="indexItem">
+  <view class='index-content'>
+    <view class='article-status-info'>
+      <image src='{{authHaedImg}}' class='article-author-img'></image>
+      <text class='article-date'>{{articleDate}}</text>
+    </view>
+    <text class='article-title'>{{articleTitle}}</text>
+    <image class='article-img' src='{{articleImg}}'></image>
+    <text class='article-describe'>{{articleDescribe}}</text>
+    <view class='article-access'>
+      <image class='article-access-img' src='../../images/icon/view.png'></image>
+      <text class='article-access-font'>{{articleReading}}</text>
+      <image class='article-access-img' src='../../images/icon/collection-anti.png'></image>
+      <text class='article-access-font'> {{articleCollectoin}}</text>
+    </view>
+
+  </view>
+
+</template>

@@ -1,0 +1,16 @@
+<!--pages/index/indexDetial/indexDetial.wxml-->
+<view class='index-container'>
+  <view class='status-bar'></view>
+  <view class='index-title'>
+    <text class='index-title-text'>详情</text>
+  </view>
+
+
+  <view>
+  <image src='' class=''></image>
+  </view>
+
+
+
+
+</view>

@@ -1,4 +1,4 @@
-/* pages/mine/mine.wxss */
+/* pages/index/indexDetial/indexDetial.wxss */
 .status-bar{
   background-color: white;
   position: fixed;
