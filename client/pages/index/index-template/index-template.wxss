@@ -25,7 +25,7 @@
   font-weight: 300;
   vertical-align: middle;
   margin-bottom: 5rpx;
-  color: #e3e3e3;
+  color: #999;
   
 }
 .article-title{
