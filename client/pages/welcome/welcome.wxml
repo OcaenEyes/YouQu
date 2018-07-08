@@ -2,7 +2,7 @@
 <view class='wel-container'>
 <image src='../../images/userHeadImg.jpg' class='user-head-img'></image>
   <text class='wel-title'>"乔克叔叔"</text>
-  <view class='wel-btn'>
+  <view class='wel-btn' bindtap='onTap'>
     <text class='wel-btn-tetx'>来撩呀</text>
   </view>
 </view>

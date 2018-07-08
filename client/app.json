@@ -1,9 +1,12 @@
 {
   "pages": [
-    "pages/welcome/welcome",
-    "pages/index/index"
+    "pages/index/index",
+    "pages/welcome/welcome"
+    
+    
   ],
   "window": {
     "navigationStyle": "custom"
   }
+    
 }

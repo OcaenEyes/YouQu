@@ -1,1 +1,38 @@
 <!--首页  -->
+<view class='index-container'>
+  <view class='status-bar'></view>
+  <view class='index-title' style='position:fixed; top:40rpx;width: 750rpx;'>
+    <text class='index-title-text'>柚一下</text>
+  </view>
+  <swiper class='index-banner' indicator-dots='true'>
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src='{{item}}'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+
+  <!-- <block wx:for="{{}}" wx:for-item="item"> -->
+  <view class='index-content'>
+    <view class='article-status-info'>
+      <image src='' class='article-author-img'></image>
+      <text class='article-date'>July 8 2018</text>
+    </view>
+    <text class='article-title'>你好呀 小亲亲</text>
+    <image class='article-img'></image>
+    <text class='article-describe'>小改改 小宝贝 小可爱 小亲亲 小菇凉</text>
+    <view class='article-access'>
+      <image class='article-reading'></image>
+      <text>93</text>
+      <image class='article-colletion'></image>
+      <text class=''> 54</text>
+    </view>
+
+  </view>
+
+
+  <!-- </block> -->
+
+
+</view>
