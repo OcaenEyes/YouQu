@@ -1,0 +1,8 @@
+<!--pages/welcome/welcome.wxml-->
+<view class='wel-container'>
+<image src='../../images/userHeadImg.jpg' class='user-head-img'></image>
+  <text class='wel-title'>"乔克叔叔"</text>
+  <view class='wel-btn'>
+    <text class='wel-btn-tetx'>来撩呀</text>
+  </view>
+</view>

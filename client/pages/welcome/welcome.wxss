@@ -1,0 +1,41 @@
+/* pages/welcome/welcome.wxss */
+page{
+  background-size: 100% 100%;
+  background-image: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1526798051548&di=dbd1d40bfe747cc1d1131d90171abe0b&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fmobile%2Ff%2F59a7eb374a6e4.jpg");
+}
+
+.wel-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.user-head-img{
+  height: 160rpx;
+  width: 160rpx;
+  border-radius: 80rpx;
+  margin-top: 300rpx;
+  margin-bottom: 140rpx;
+  opacity: 0.50;
+}
+.wel-title{
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+  font-size: 48rpx;
+  font-weight: 300;
+  color: #fff;
+}
+
+.wel-btn{
+  width: 240rpx;
+  height: 66rpx;
+  font-size: 28rpx;
+  line-height: 66rpx;
+  border: 1px solid #fff;
+  text-align: center;
+  border-radius: 4rpx;
+  margin-top: 160rpx;
+  color: #fff;
+
+}
