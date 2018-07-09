@@ -1,4 +1,6 @@
 // pages/index/indexDetial/indexDetial.js
+var indexsData = require('../../../data/index-data.js')
+
 Page({
 
   /**
@@ -12,7 +14,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var indexDetialId = options.id;
+    var indexDetialData = indexsData.indexList[indexDetialId];
+    console.log(indexDetialData);
+   
+
   },
 
   /**

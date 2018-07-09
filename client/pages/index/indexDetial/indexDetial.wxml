@@ -8,15 +8,15 @@
 
 
   <view class="indexDetial-container">
-    <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531035292705&di=52e407e28ef10c976bccefb4e3983579&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2Fb%2F59af9954af6d0.jpg' class='indexDetial-headImg'></image>
-    <image src='../../../images/music/play.png' class='audio' bindtap='onMusicPlay'></image>
+    <image src='{{indexDetialHeadImg}}' class='indexDetial-headImg'></image>
+    <image src='{{audioController}}' class='audio' bindtap='onMusicPlay'></image>
     <view class='indexDetial-articleInfo'>
-      <image src='../../../images/userHeadImg/3.png' class='indexDetial-articleInfo-authImg'></image>
-      <text class='indexDetial-articleInfo-author'>乔克叔叔</text>
-      <text class='indexDetial-articleInfo-status'>发表于</text>
-      <text class='indexDetial-articleInfo-date'>24小时前</text>
+      <image src='{{authHaedImg}}' class='indexDetial-articleInfo-authImg'></image>
+      <text class='indexDetial-articleInfo-author'>{{authorName}}</text>
+      <text class='indexDetial-articleInfo-status'>{{articleStatus}}</text>
+      <text class='indexDetial-articleInfo-date'>{{articleDate}}</text>
     </view>
-    <text class='indexDetial-articleTitle'>你看起来很好吃 ^_^</text>
+    <text class='indexDetial-articleTitle'>{{articleTitle}}</text>
     <view class='tool'>
       <view class='tool-img'>
         <image class='indexDetial-articleCollect' src='../../../images/icon/collection.png'></image>
@@ -25,7 +25,7 @@
       <view class='indexDetial-line'></view>
     </view>
 
-    <text class='indexDetial-articleDetial'> 小改改 小宝贝 小可爱 小亲亲 小菇凉 小改改 小宝贝 小改改 小宝贝 小可爱 小亲亲 小菇凉 小改改 小宝贝 小改改 小宝贝 小可爱 小亲亲 小菇凉 小改改 小宝贝 小改改 小宝贝 小可爱 小亲亲 小菇凉 小改改 小宝贝 小改改 小宝贝 小可爱 小亲亲 小菇凉 小改改 小宝贝</text>
+    <text class='indexDetial-articleDetial'> {{articleDetial}}</text>
 
 
 
