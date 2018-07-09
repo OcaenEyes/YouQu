@@ -7,77 +7,107 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     var indexDetialId = options.id;
+    this.setData({
+      currentIndexId: indexDetialId
+    });
+    
     var indexDetialData = indexsData.indexList[indexDetialId];
     // console.log(indexDetialData);
     this.setData({
       indexDetialData: indexDetialData
     });
-   
 
+    var indexsClolected = wx.getStorageSync('indexs_Collected');
+    if (indexsCollected) {
+      var indexDetialCollected = indexsCollected[indexDetialId];
+      this.setData({
+        collected: indexDetialCollected
+      })
+    } else {
+      var indexsCollected = {};
+      indexsCollected[indexDetialId] = false;
+      wx.setStorageSync('indexs_Collected', indexsCollected)
+    }
   },
+  onCollectTap: function(event) {
+    var indexsCollected = wx.getStorageSync('indexs_Collected');
+    console.log(indexsCollected);
+    var indexDetialCollected = indexsCollected[currentIndexId];
+    console.log(indexDetialCollected);
+    
+    indexDetialCollected :!indexDetialCollected;
+    indexsCollected[currentIndexId] = indexDetialCollected;
+    wx.setStorageSync('indexs_Collected', indexsCollected);
+
+    this.setData({
+      collected: indexDetialCollected
+
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-  
+  onReady: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-  
+  onShow: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-  
+  onHide: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-  
+  onUnload: function() {
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-  
+  onPullDownRefresh: function() {
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-  
+  onReachBottom: function() {
+
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-  
+  onShareAppMessage: function() {
+
   },
-  onBackTap:function(){
+  onBackTap: function() {
     wx.switchTab({
       url: '../index',
     })
   },
-  onMusicPlay:function(){
+  onMusicPlay: function() {
     const innerAudioContext = wx.createInnerAudioContext()
     innerAudioContext.autoplay = true
     innerAudioContext.src = 'http://rm.sina.com.cn/wm/VZ200908211010598473VK/music/MUSIC0908211041411747.mp3'

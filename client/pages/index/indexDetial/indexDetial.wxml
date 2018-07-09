@@ -19,8 +19,9 @@
     <text class='indexDetial-articleTitle'>{{indexDetialData.articleTitle}}</text>
     <view class='tool'>
       <view class='tool-img'>
-        <image class='indexDetial-articleCollect' src='../../../images/icon/collection.png'></image>
-        <image class='indexDetial-articleShare' src='../../../images/icon/share.png'></image>
+        <image wx:if="{{cloletced}}" class='indexDetial-articleCollect' src='../../../images/icon/collection.png'></image>
+        <image wx:else class='indexDetial-articleCollect' src='../../../images/icon/collection-anti.png' catchtap='onCollectTap'></image>
+        <image class='indexDetial-articleShare' src='../../../images/icon/share.png' catchtap='onShareTap'></image>
       </view>
       <view class='indexDetial-line'></view>
     </view>
