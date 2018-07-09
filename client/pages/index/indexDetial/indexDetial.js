@@ -1,5 +1,5 @@
 // pages/index/indexDetial/indexDetial.js
-var indexsData = require('../../../data/index-data.js')
+var indexsData = require('../../../data/index-data.js');
 
 Page({
 
@@ -16,7 +16,10 @@ Page({
   onLoad: function (options) {
     var indexDetialId = options.id;
     var indexDetialData = indexsData.indexList[indexDetialId];
-    console.log(indexDetialData);
+    // console.log(indexDetialData);
+    this.setData({
+      indexDetialData: indexDetialData
+    });
    
 
   },

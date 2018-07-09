@@ -8,15 +8,15 @@
 
 
   <view class="indexDetial-container">
-    <image src='{{indexDetialHeadImg}}' class='indexDetial-headImg'></image>
-    <image src='{{audioController}}' class='audio' bindtap='onMusicPlay'></image>
+    <image src='{{indexDetialData.indexDetialHeadImg}}' class='indexDetial-headImg'></image>
+    <image src='{{indexDetialData.audioController}}' class='audio' bindtap='onMusicPlay'></image>
     <view class='indexDetial-articleInfo'>
-      <image src='{{authHaedImg}}' class='indexDetial-articleInfo-authImg'></image>
-      <text class='indexDetial-articleInfo-author'>{{authorName}}</text>
-      <text class='indexDetial-articleInfo-status'>{{articleStatus}}</text>
-      <text class='indexDetial-articleInfo-date'>{{articleDate}}</text>
+      <image src='{{indexDetialData.authHaedImg}}' class='indexDetial-articleInfo-authImg'></image>
+      <text class='indexDetial-articleInfo-author'>{{indexDetialData.authorName}}</text>
+      <text class='indexDetial-articleInfo-status'>{{indexDetialData.articleStatus}}</text>
+      <text class='indexDetial-articleInfo-date'>{{indexDetialData.articleDate}}</text>
     </view>
-    <text class='indexDetial-articleTitle'>{{articleTitle}}</text>
+    <text class='indexDetial-articleTitle'>{{indexDetialData.articleTitle}}</text>
     <view class='tool'>
       <view class='tool-img'>
         <image class='indexDetial-articleCollect' src='../../../images/icon/collection.png'></image>
@@ -25,7 +25,7 @@
       <view class='indexDetial-line'></view>
     </view>
 
-    <text class='indexDetial-articleDetial'> {{articleDetial}}</text>
+    <text class='indexDetial-articleDetial'> {{indexDetialData.articleDetial}}</text>
 
 
 
