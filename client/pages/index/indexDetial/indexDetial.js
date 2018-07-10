@@ -172,7 +172,7 @@ Page({
         isPlayingMusic: true
       });
     };
-    console.log(indexData.music.dataUrl);
+    // console.log(indexData.music.dataUrl);
   },
 
 
