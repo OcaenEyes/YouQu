@@ -24,9 +24,10 @@ Page({
     this.setData({
       indexDetialData: indexDetialData
     });
-    console.log(currentIndexId);
+    // console.log(currentIndexId);
 
     var indexsClolected = wx.getStorageSync('indexs_Collected');
+    
     if (indexsCollected) {
       var indexDetialCollected = indexsCollected[indexDetialId];
       this.setData({
@@ -36,7 +37,23 @@ Page({
       var indexsCollected = {};
       indexsCollected[indexDetialId] = false;
       wx.setStorageSync('indexs_Collected', indexsCollected)
-    }
+    };
+
+    var indexsShared = wx.getStorageSync('indexs_Shared');
+
+    if (indexsShared) {
+      var indexDetialShared = indexsShared[indexDetialId];
+      this.setData({
+        shared: indexDetialShared
+      })
+    } else {
+      var indexsShared = {};
+      indexsShared[indexDetialId] = false;
+      wx.setStorageSync('indexs_Shared', indexsShared)
+    };
+
+
+
   },
   onCollectTap: function(event) {
     var currentIndexId = this.data.currentIndexId;
@@ -54,70 +71,105 @@ Page({
     wx.setStorageSync('indexs_Collected', indexsCollected);
 
     this.setData({
-
       collected: indexDetialCollected
-
     });
-    console.log(this.data.collected);
+    // console.log(this.data.collected);
   },
+
+
+  onShareTap: function (event) {
+    var currentIndexId = this.data.currentIndexId;
+
+    var indexsShared = wx.getStorageSync('indexs_Shared');
+    
+    var indexDetialShared = indexsShared[currentIndexId];
+
+    indexDetialShared = !indexDetialShared;
+
+    indexsShared[currentIndexId] = indexDetialShared;
+    
+    wx.setStorageSync('indexs_Shared', indexsShared);
+
+    this.setData({
+      shared: indexDetialShared
+    });
+
+  },
+
+  onBackTap: function() {
+    wx.switchTab({
+      url: '../index',
+    })
+  },
+
+  onMusicPlay: function() {
+    const innerAudioContext = wx.createInnerAudioContext()
+    innerAudioContext.autoplay = true
+    innerAudioContext.src = 'http://rm.sina.com.cn/wm/VZ200908211010598473VK/music/MUSIC0908211041411747.mp3'
+  },
+
+
+
+
+
+
+
+
+
 
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   },
-  onBackTap: function() {
-    wx.switchTab({
-      url: '../index',
-    })
-  },
-  onMusicPlay: function() {
-    const innerAudioContext = wx.createInnerAudioContext()
-    innerAudioContext.autoplay = true
-    innerAudioContext.src = 'http://rm.sina.com.cn/wm/VZ200908211010598473VK/music/MUSIC0908211041411747.mp3'
-  }
 })
+
+
+
+
+
+
