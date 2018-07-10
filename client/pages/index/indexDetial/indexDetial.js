@@ -172,6 +172,7 @@ Page({
         isPlayingMusic: true
       });
     };
+    console.log(indexData.music.dataUrl);
   },
 
 
