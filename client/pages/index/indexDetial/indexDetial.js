@@ -6,24 +6,25 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {
-
-  },
+  data: {},
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
     var indexDetialId = options.id;
+    var currentIndexId = indexDetialId;
     this.setData({
-      currentIndexId: indexDetialId
+      currentIndexId: currentIndexId
     });
-    
+
+
     var indexDetialData = indexsData.indexList[indexDetialId];
     // console.log(indexDetialData);
     this.setData({
       indexDetialData: indexDetialData
     });
+    console.log(currentIndexId);
 
     var indexsClolected = wx.getStorageSync('indexs_Collected');
     if (indexsCollected) {
@@ -38,19 +39,26 @@ Page({
     }
   },
   onCollectTap: function(event) {
+    var currentIndexId = this.data.currentIndexId;
+
     var indexsCollected = wx.getStorageSync('indexs_Collected');
-    console.log(indexsCollected);
+    // console.log(indexsCollected);
+
     var indexDetialCollected = indexsCollected[currentIndexId];
-    console.log(indexDetialCollected);
-    
-    indexDetialCollected :!indexDetialCollected;
+    // console.log(indexDetialCollected);
+
+    indexDetialCollected = !indexDetialCollected;
+
     indexsCollected[currentIndexId] = indexDetialCollected;
+    // console.log(indexsCollected[currentIndexId]);
     wx.setStorageSync('indexs_Collected', indexsCollected);
 
     this.setData({
+
       collected: indexDetialCollected
 
-    })
+    });
+    console.log(this.data.collected);
   },
 
 
