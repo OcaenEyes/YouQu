@@ -6,7 +6,9 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {},
+  data: {
+    isPlayingMusic: false,
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -133,10 +135,40 @@ Page({
     })
   },
 
-  onMusicPlay: function() {
-    const innerAudioContext = wx.createInnerAudioContext()
-    innerAudioContext.autoplay = true
-    innerAudioContext.src = 'http://rm.sina.com.cn/wm/VZ200908211010598473VK/music/MUSIC0908211041411747.mp3'
+  onMusicTap: function() {
+    var isPlayingMusic = this.data.isPlayingMusic;
+    console.log(isPlayingMusic)
+
+    // const backgroundAudioManager = wx.getBackgroundAudioManager();
+    // backgroundAudioManager.title = 'The Saltwater Room';
+    // backgroundAudioManager.epname = 'Maybe I Am Dreaming';
+    // backgroundAudioManager.singer = 'OWL CITY';
+    // backgroundAudioManager.coverImgUrl = 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1537610685,3035632971&fm=27&gp=0.jpg';
+    // backgroundAudioManager.src = 'http://rm.sina.com.cn/wm/VZ200908211010598473VK/music/MUSIC0908211041411747.mp3';
+    // if (isPlayingMusic){
+    //   backgroundAudioManager.onPlay();
+    //   this.data.isPlayingMusic =false;
+    // }
+    // else{
+    //   backgroundAudioManager.onPause();
+    //   this.data.isPlayingMusic = true;
+    // };
+
+    if (isPlayingMusic) {
+      wx.pauseBackgroundAudio();
+      this.setData({
+        isPlayingMusic: false
+      });
+    } else {
+      wx.playBackgroundAudio({
+        dataUrl: 'http://rm.sina.com.cn/wm/VZ200908211010598473VK/music/MUSIC0908211041411747.mp3',
+        title: 'The Saltwater Room',
+        coverImgUrl: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1537610685,3035632971&fm=27&gp=0.jpg'
+      });
+      this.setData({
+        isPlayingMusic: true
+      });
+    };
   },
 
 

@@ -45,7 +45,7 @@
 .audio{
   width: 102rpx;
   height: 110rpx;
-  opacity: 0.66;
+  opacity: 0.8;
   left: 50%;
   top:300rpx;
   position: absolute;
