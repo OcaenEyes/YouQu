@@ -17,8 +17,6 @@ Page({
     this.setData({
       currentIndexId: currentIndexId
     });
-
-
     var indexDetialData = indexsData.indexList[indexDetialId];
     // console.log(indexDetialData);
     this.setData({
@@ -26,19 +24,7 @@ Page({
     });
     // console.log(currentIndexId);
 
-    var indexsClolected = wx.getStorageSync('indexs_Collected');
-    
-    if (indexsCollected) {
-      var indexDetialCollected = indexsCollected[indexDetialId];
-      this.setData({
-        collected: indexDetialCollected
-      })
-    } else {
-      var indexsCollected = {};
-      indexsCollected[indexDetialId] = false;
-      wx.setStorageSync('indexs_Collected', indexsCollected)
-    };
-
+    // shared内容
     var indexsShared = wx.getStorageSync('indexs_Shared');
 
     if (indexsShared) {
@@ -52,29 +38,48 @@ Page({
       wx.setStorageSync('indexs_Shared', indexsShared)
     };
 
+// collected内容
+    var indexsCollected = wx.getStorageSync('indexs_Collected');
+
+    if (indexsCollected) {
+      var indexDetialCollected = indexsCollected[indexDetialId];
+      this.setData({
+        collected: indexDetialCollected
+      })
+    } else {
+      var indexsCollected = {};
+      indexsCollected[indexDetialId] = false;
+      wx.setStorageSync('indexs_Collected', indexsCollected)
+    };
+
 
 
   },
+
   onCollectTap: function(event) {
     var currentIndexId = this.data.currentIndexId;
 
     var indexsCollected = wx.getStorageSync('indexs_Collected');
-    // console.log(indexsCollected);
 
     var indexDetialCollected = indexsCollected[currentIndexId];
-    // console.log(indexDetialCollected);
 
     indexDetialCollected = !indexDetialCollected;
 
     indexsCollected[currentIndexId] = indexDetialCollected;
-    // console.log(indexsCollected[currentIndexId]);
+    console.log(indexsCollected[currentIndexId]);
+    console.log(indexsCollected);
     wx.setStorageSync('indexs_Collected', indexsCollected);
 
     this.setData({
       collected: indexDetialCollected
-    });
+    }); 
+    wx.showToast({
+      title: indexDetialCollected ? '收藏成功' : '取消成功',
+      duration: 800,
+      icon: 'success'});
     // console.log(this.data.collected);
   },
+
 
 
   onShareTap: function (event) {
@@ -87,12 +92,14 @@ Page({
     indexDetialShared = !indexDetialShared;
 
     indexsShared[currentIndexId] = indexDetialShared;
-    
+    console.log(indexsShared[currentIndexId]);
+    console.log(indexsShared);
     wx.setStorageSync('indexs_Shared', indexsShared);
 
     this.setData({
       shared: indexDetialShared
     });
+
 
   },
 
