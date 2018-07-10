@@ -137,7 +137,10 @@ Page({
 
   onMusicTap: function() {
     var isPlayingMusic = this.data.isPlayingMusic;
-    console.log(isPlayingMusic)
+    var currentIndexId = this.data.currentIndexId;
+    var indexData = indexsData.indexList[currentIndexId];
+    // console.log(indexData);
+    // console.log(isPlayingMusic)
 
     // const backgroundAudioManager = wx.getBackgroundAudioManager();
     // backgroundAudioManager.title = 'The Saltwater Room';
@@ -154,16 +157,16 @@ Page({
     //   this.data.isPlayingMusic = true;
     // };
 
-    if (isPlayingMusic) {
+    if (isPlayingMusic) {    
       wx.pauseBackgroundAudio();
       this.setData({
         isPlayingMusic: false
       });
     } else {
       wx.playBackgroundAudio({
-        dataUrl: 'http://rm.sina.com.cn/wm/VZ200908211010598473VK/music/MUSIC0908211041411747.mp3',
-        title: 'The Saltwater Room',
-        coverImgUrl: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1537610685,3035632971&fm=27&gp=0.jpg'
+        dataUrl: indexData.music.dataUrl,
+        title: indexData.music.title,
+        coverImgUrl: indexData.music.coverImgUrl
       });
       this.setData({
         isPlayingMusic: true
