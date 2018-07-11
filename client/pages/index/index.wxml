@@ -6,12 +6,24 @@
     <text class='index-title-text'>柚夏</text>
   </view>
   <swiper class='index-banner' indicator-dots='true' interval='2000' indicator-active-color='#fff' indicator-color='rgba(0,0,0,0.05)' autoplay='true'>
-    <block wx:for="{{imgUrls}}">
-      <swiper-item>
-        <text class='img-describe'>{{imgDescribe}}</text>
-        <image src='{{item}}'></image>
+     <!-- <block wx:for="{{imgDescribes}}">  -->
+      <swiper-item bindtap='onBannerTap' data-id='0'>
+        <text class='img-describe'>{{imgDescribes[0]}}</text>
+        <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531035292702&di=d859aaea331b8d08a07b6e55809fc091&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2Fc%2F59b22eea7a9db.jpg' ></image>
       </swiper-item>
-    </block>
+      <swiper-item bindtap='onBannerTap' data-id='1'>
+        <text class='img-describe'>{{imgDescribes[1]}}</text>
+        <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531034468270&di=77c61fd55d1f6b1653083694dc6ea393&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2017-11-29%2F5a1e5567eae77.jpg' ></image>
+      </swiper-item>
+      <swiper-item  bindtap='onBannerTap' data-id='2'>
+        <text class='img-describe'>{{imgDescribes[2]}}</text>
+        <image src='https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1650076226,2678631885&fm=27&gp=0.jpg'></image>
+      </swiper-item>
+      <swiper-item bindtap='onBannerTap' data-id='3'>
+        <text class='img-describe'>{{imgDescribes[3]}}</text>
+        <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531035292705&di=52e407e28ef10c976bccefb4e3983579&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2Fb%2F59af9954af6d0.jpg' ></image>
+      </swiper-item>
+     <!-- </block>  -->
   </swiper>
 
 
