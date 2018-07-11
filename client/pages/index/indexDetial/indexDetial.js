@@ -1,5 +1,6 @@
 // pages/index/indexDetial/indexDetial.js
 var indexsData = require('../../../data/index-data.js');
+var app = getApp();
 
 Page({
 
@@ -14,31 +15,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    var globalData = app.globalData;
     var indexDetialId = options.id;
     var currentIndexId = indexDetialId;
     this.setData({
       currentIndexId: currentIndexId
     });
     var indexDetialData = indexsData.indexList[indexDetialId];
-    // console.log(indexDetialData);
     this.setData({
       indexDetialData: indexDetialData
     });
-    // console.log(currentIndexId);
-
-    // // shared内容
-    // var indexsShared = wx.getStorageSync('indexs_Shared');
-
-    // if (indexsShared) {
-    //   var indexDetialShared = indexsShared[indexDetialId];
-    //   this.setData({
-    //     shared: indexDetialShared
-    //   })
-    // } else {
-    //   var indexsShared = {};
-    //   indexsShared[indexDetialId] = false;
-    //   wx.setStorageSync('indexs_Shared', indexsShared)
-    // };
 
     // collected内容
     var indexsCollected = wx.getStorageSync('indexs_Collected');
@@ -53,8 +39,28 @@ Page({
       indexsCollected[indexDetialId] = false;
       wx.setStorageSync('indexs_Collected', indexsCollected)
     };
+    if (app.globalData.g_isPLayingMusic && app.globalData.g_currentMusicId === currentIndexId) {
+      this.setData({
+        isPlayingMusic: true
+      })
+    }
+    var that = this;
+    wx.onBackgroundAudioPlay(function() {
+      that.setData({
+        isPlayingMusic: true
+      })
+      app.globalData.g_isPLayingMusic = true;
+      app.globalData.g_currentMusicId = currentIndexId;
 
+    });
+    wx.onBackgroundAudioPause(function() {
+      that.setData({
+        isPlayingMusic: false
+      })
+      app.globalData.g_isPLayingMusic = false;
+      app.globalData.g_currentMusicId = null;
 
+    });
 
   },
 
@@ -87,23 +93,6 @@ Page({
 
 
   onShareTap: function(event) {
-    // var currentIndexId = this.data.currentIndexId;
-
-    // var indexsShared = wx.getStorageSync('indexs_Shared');
-
-    // var indexDetialShared = indexsShared[currentIndexId];
-
-    // indexDetialShared = !indexDetialShared;
-
-    // indexsShared[currentIndexId] = indexDetialShared;
-    // console.log(indexsShared[currentIndexId]);
-    // console.log(indexsShared);
-    // wx.setStorageSync('indexs_Shared', indexsShared);
-
-    // this.setData({
-    //   shared: indexDetialShared
-    // });
-
     var itemList = [
       '分享给微信好友',
       '分享到朋友圈',
@@ -157,7 +146,7 @@ Page({
     //   this.data.isPlayingMusic = true;
     // };
 
-    if (isPlayingMusic) {    
+    if (isPlayingMusic) {
       wx.pauseBackgroundAudio();
       this.setData({
         isPlayingMusic: false
@@ -172,7 +161,7 @@ Page({
         isPlayingMusic: true
       });
     };
-    // console.log(indexData.music.dataUrl);
+    console.log(indexData.music.dataUrl);
   },
 
 

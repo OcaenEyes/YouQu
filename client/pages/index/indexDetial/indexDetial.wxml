@@ -8,7 +8,7 @@
 
 
   <view class="indexDetial-container">
-    <image src='{{indexDetialData.indexDetialHeadImg}}' class='indexDetial-headImg'></image>
+    <image src='{{isPlayingMusic?indexDetialData.music.coverImgUrl:indexDetialData.indexDetialHeadImg}}' class='indexDetial-headImg'></image>
     <image src="{{isPlayingMusic?'/images/music/pause.png':'/images/music/play.png'}}" class='audio' bindtap='onMusicTap'></image>
     <view class='indexDetial-articleInfo'>
       <image src='{{indexDetialData.authHaedImg}}' class='indexDetial-articleInfo-authImg'></image>
