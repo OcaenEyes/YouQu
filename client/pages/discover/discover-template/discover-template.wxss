@@ -1,0 +1,23 @@
+@import "../stars-template/stars-template.wxss";
+
+.discoer-container{
+  display: flex;
+  flex-direction: column;
+  padding: 0 22rpx;
+
+}
+.discover-img{
+  width:200rpx ;
+  height:270rpx ;
+  padding-bottom: 20rpx;
+
+}
+.disvoer-title{
+  color: #333;
+  margin: 5rpx auto;
+
+}
+.discover-stars{
+  margin: 5rpx auto;
+
+}

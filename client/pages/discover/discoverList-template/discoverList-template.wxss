@@ -1,0 +1,42 @@
+@import "../discover-template/discover-template.wxss";
+
+.discoverList-container {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.discover-head {
+  padding: 30rpx 20rpx 22px;
+}
+
+.discover-slogan {
+  font-weight: bold;
+  margin-left: 14rpx;
+}
+
+ .more {
+  float: right;
+  margin-right: 14rpx;
+  vertical-align: middle;
+} 
+
+.more-text {
+  vertical-align: middle;
+  margin-right: 6rpx;
+  color: #1f4ba5;
+}
+
+.more-img {
+  width: 9rpx;
+  height: 16rpx;
+  vertical-align: middle;
+  margin-right: 12rpx; 
+}
+
+.disvoers-container {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  margin:0 auto 0; 
+}

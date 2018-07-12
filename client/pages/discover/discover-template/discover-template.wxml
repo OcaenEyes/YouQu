@@ -1,0 +1,11 @@
+<import src="../stars-template/stars-template.wxml" />
+
+<template name="discoverTemplate">
+  <view class='discoer-container'>
+    <image src='https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1650076226,2678631885&fm=27&gp=0.jpg' class='discover-img'></image>
+    <text class='disvoer-title'>乔克叔叔</text>
+    <view class='discover-stars'>
+      <template is='starsTemplate' />
+    </view>
+  </view>
+</template>
