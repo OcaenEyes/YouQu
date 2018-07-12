@@ -1,0 +1,17 @@
+<!--pages/discover/discover.wxml-->
+<view class='index-container'>
+  <view class='status-bar'></view>
+  <view class='index-title'>
+    <text class='index-title-text'>小柚</text>
+  </view>
+  <view class='mine-container'>
+    <view class='userInfo'>
+      <image class='userHeadImg' src='../../images/userHeadImg.jpg'></image>
+      <text class='userName'>乔克叔叔</text>
+    </view>
+  </view>
+
+
+
+
+</view>

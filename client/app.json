@@ -3,6 +3,7 @@
     "pages/welcome/welcome",
     "pages/index/index",
     "pages/index/indexDetial/indexDetial",
+    "pages/discover/discover",
     "pages/mine/mine"
   ],
   "window": {
@@ -15,6 +16,10 @@
       {
         "pagePath": "pages/index/index",
         "text": "柚夏"
+      },
+      {
+        "pagePath": "pages/discover/discover",
+        "text": "柚趣"
       },
       {
         "pagePath": "pages/mine/mine",
