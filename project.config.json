@@ -1,8 +1,6 @@
 {
 	"description": "项目配置文件。",
-	"client": "./client",
-	"server": "./server",
-	"qcloudRoot": "./server",
+	"client": "./YouQu",
 	"packOptions": {
 		"ignore": []
 	},

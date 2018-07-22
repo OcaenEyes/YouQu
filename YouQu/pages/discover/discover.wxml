@@ -1,0 +1,24 @@
+<!--pages/discover/discover.wxml-->
+<import src="discoverList-template/discoverList-template.wxml" />
+<view class='index-container'>
+  <view class='status-bar'></view>
+  <view class='index-title'>
+    <text class='index-title-text'>柚一点</text>
+  </view>
+  <view class='mine-container'>
+    <view class='mine-container-list'>
+      <template is='discoverListTemplate' />
+    </view>
+    <view class='mine-container-list'>
+      <template is='discoverListTemplate' />
+    </view>
+    <view class='mine-container-list'>
+      <template is='discoverListTemplate' />
+    </view>
+
+  </view>
+
+
+
+
+</view>
