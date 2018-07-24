@@ -7,13 +7,13 @@
   </view>
   <view class='mine-container'>
     <view class='mine-container-list'>
-      <template is='discoverListTemplate' />
+      <template is='discoverListTemplate'  data='{{...top250}}'/>
     </view>
     <view class='mine-container-list'>
-      <template is='discoverListTemplate' />
+      <template is='discoverListTemplate' data='{{...inTheaters}}' />
     </view>
     <view class='mine-container-list'>
-      <template is='discoverListTemplate' />
+      <template is='discoverListTemplate' data='{{...comingSoon}}'/>
     </view>
 
   </view>

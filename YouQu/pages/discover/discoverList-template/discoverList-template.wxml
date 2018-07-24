@@ -9,9 +9,12 @@
       </view>
     </view>
     <view class='disvoers-container'>
-      <template is='discoverTemplate' />
-      <template is='discoverTemplate' />
-      <template is='discoverTemplate' />
+      <block wx:for='{{movies}}' wx:for-item='movie'>
+        <template is='discoverTemplate' data="{{...movie}}" />
+      </block>
+
+      <!-- <template is='discoverTemplate' />
+      <template is='discoverTemplate' /> -->
     </view>
   </view>
 </template>

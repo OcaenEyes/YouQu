@@ -20,8 +20,9 @@
   background-color: #fff; 
 }
 .mine-container{
-  background-color: #f2f2f2;
+  margin-top: 128rpx;
+  background-color: #f1f1f1;
 }
 .mine-container-list{
-  margin-bottom: 10rpx;
+  margin-bottom: 12rpx;
 }
