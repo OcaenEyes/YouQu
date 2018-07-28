@@ -34,15 +34,18 @@ Page({
       },
       method: 'GET',
       success: function(res) {
-        console.log(res);
+        // console.log(res);
         that.processDoubanData(res.data, settedKey, categoryTitle);
-
       },
       fail: function() {
         console.log('failed');
         console.log(Error);
       }
-    })
+    });
+    wx.showLoading({
+      title: '资源加载中',
+    });
+
   },
   processDoubanData: function(moviesDouban, settedKey, categoryTitle) {
     var movies = [];
@@ -68,7 +71,7 @@ Page({
     };
 
     this.setData(readyData);
-
+    wx.hideLoading();
   },
 
   /**

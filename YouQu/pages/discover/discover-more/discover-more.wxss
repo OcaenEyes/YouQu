@@ -1,4 +1,5 @@
 /* pages/discover/discover-more/discover-more.wxss */
+@import "../discover-grid-template/discover-grid-template.wxss";
 
 .status-bar {
   background-color: white;
@@ -36,6 +37,4 @@
 .indexDetial-container {
   margin-top: 128rpx;
   width: 100%;
-  display: flex;
-  flex-direction: column;
 }

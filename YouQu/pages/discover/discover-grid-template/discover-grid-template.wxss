@@ -1,0 +1,9 @@
+@import "../discover-template/discover-template.wxss";
+.grid-container{
+  margin-left: rpx;
+  height: 1206rpx;
+}
+.single-view-container{
+  float: left;
+  margin-bottom: 40rpx;
+}

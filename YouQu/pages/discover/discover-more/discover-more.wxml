@@ -1,4 +1,5 @@
 <!--pages/discover/discover-more/discover-more.wxml-->
+<import src="../discover-grid-template/discover-grid-template.wxml" />
 <view class='index-container'>
   <view class='status-bar'></view>
   <view class='index-title'>
@@ -8,9 +9,6 @@
 
 
   <view class="indexDetial-container">
+    <template is="discoverGridTemplate" data="{{movies}}"></template>
   </view>
-
-
-
-
 </view>

@@ -21,6 +21,7 @@
 }
 .mine-container{
   margin-top: 128rpx;
+  margin-left: 8rpx;
   background-color: #f1f1f1;
 }
 .mine-container-list{
