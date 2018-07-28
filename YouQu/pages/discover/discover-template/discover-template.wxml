@@ -5,7 +5,7 @@
     <image src='{{coverageUrl}}' class='discover-img'></image>
     <text class='disvoer-title'>{{title}}</text>
     <view class='discover-stars'>
-      <template is='starsTemplate' data="{{average}}" />
+      <template is='starsTemplate' data="{{stars:stars,score:average}}" />
     </view>
   </view>
 </template>
