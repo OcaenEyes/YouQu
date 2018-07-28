@@ -1,12 +1,12 @@
 // pages/discover/discover.js
-var util =require('../../utils/util.js');
+var util = require('../../utils/util.js');
 var app = getApp();
 Page({
-  data:{
+  data: {
     top250: {},
-    inTheaters:{},
-    comingSoon:{}
-    
+    inTheaters: {},
+    comingSoon: {}
+
   },
 
   // restful api json
@@ -17,15 +17,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var inTheatersUrl = app.globalData.doubanBase + "/v2/movie/in_theaters"+"?start=0&count=3";
+    var inTheatersUrl = app.globalData.doubanBase + "/v2/movie/in_theaters" + "?start=0&count=3";
     var comingSoonUrl = app.globalData.doubanBase + "/v2/movie/coming_soon" + "?start=0&count=3";
-    var top250Url = app.globalData.doubanBase + "/v2/movie/top250" + "?start=0&count=3";   
-    this.getMovieListData(top250Url,"top250",'豆瓣TOP250');
-    this.getMovieListData(comingSoonUrl, "comingSoon",'即将上映');
-    this.getMovieListData(inTheatersUrl, "inTheaters",'正在热映');
+    var top250Url = app.globalData.doubanBase + "/v2/movie/top250" + "?start=0&count=3";
+    this.getMovieListData(top250Url, "top250", '豆瓣TOP250');
+    this.getMovieListData(comingSoonUrl, "comingSoon", '即将上映');
+    this.getMovieListData(inTheatersUrl, "inTheaters", '正在热映');
   },
-  getMovieListData: function(url,settedKey,categoryTitle) {
-    var that =this;
+  getMovieListData: function(url, settedKey, categoryTitle) {
+    var that = this;
     wx.request({
       url: url,
       data: {},
@@ -35,7 +35,7 @@ Page({
       method: 'GET',
       success: function(res) {
         console.log(res);
-        that.processDoubanData(res.data, settedKey,categoryTitle);
+        that.processDoubanData(res.data, settedKey, categoryTitle);
 
       },
       fail: function() {
@@ -44,28 +44,28 @@ Page({
       }
     })
   },
-  processDoubanData: function (moviesDouban, settedKey,categoryTitle){
-    var movies =[];
-    for(var idx in moviesDouban.subjects){
+  processDoubanData: function(moviesDouban, settedKey, categoryTitle) {
+    var movies = [];
+    for (var idx in moviesDouban.subjects) {
       var subject = moviesDouban.subjects[idx];
       var title = subject.title;
-      if (title.length >= 5){
-        title = title.substring(0,5) + "...";
+      if (title.length >= 5) {
+        title = title.substring(0, 5) + "...";
       }
-      var temp ={
+      var temp = {
         stars: util.convertToStarsArray(subject.rating.stars),
-        title:title,
-        average:subject.rating.average,
-        coverageUrl:subject.images.large,
-        movieId:subject.id,        
+        title: title,
+        average: subject.rating.average,
+        coverageUrl: subject.images.large,
+        movieId: subject.id,
       }
       movies.push(temp)
     }
-    var readyData ={};
+    var readyData = {};
     readyData[settedKey] = {
-      movies:movies,
+      movies: movies,
       categoryTitle: categoryTitle,
-      };
+    };
 
     this.setData(readyData);
 
@@ -118,5 +118,11 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+  onMoreTap: function(event) {
+    var category = event.currentTarget.dataset.category;
+    wx.navigateTo({
+      url: 'discover-more/discover-more?category=' + category,
+    })
   }
 })
