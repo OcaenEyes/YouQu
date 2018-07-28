@@ -5,15 +5,19 @@
   <view class='index-title'>
     <text class='index-title-text'>柚一点</text>
   </view>
+  <view class='search-container'>
+    <icon class='search-img' type='search' size='20' color='#999'></icon>
+    <input type='text' placeholder='肖申克的救赎、初恋这件小事' placeholder-class='placeholder' bindfocus='onBindFocus' bindchange="onBindChange"></input>
+  </view>
   <view class='mine-container'>
     <view class='mine-container-list'>
-      <template is='discoverListTemplate'  data='{{...top250}}'/>
+      <template is='discoverListTemplate' data='{{...top250}}' />
     </view>
     <view class='mine-container-list'>
       <template is='discoverListTemplate' data='{{...inTheaters}}' />
     </view>
     <view class='mine-container-list'>
-      <template is='discoverListTemplate' data='{{...comingSoon}}'/>
+      <template is='discoverListTemplate' data='{{...comingSoon}}' />
     </view>
 
   </view>
