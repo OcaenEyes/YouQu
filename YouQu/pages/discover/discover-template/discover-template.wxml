@@ -1,7 +1,7 @@
 <import src="../stars-template/stars-template.wxml" />
 
 <template name="discoverTemplate">
-  <view class='discoer-container'>
+  <view class='discoer-container' catchtap='onMovieTap' data-movieId="{{movieId}}">
     <image src='{{coverageUrl}}' class='discover-img'></image>
     <text class='disvoer-title'>{{title}}</text>
     <view class='discover-stars'>

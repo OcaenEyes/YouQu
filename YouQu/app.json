@@ -5,6 +5,7 @@
     "pages/index/indexDetial/indexDetial",
     "pages/discover/discover",
     "pages/discover/discover-more/discover-more",
+    "pages/discover/discoverDetial/discoverDetial",
     "pages/mine/mine"
   ],
   "window": {

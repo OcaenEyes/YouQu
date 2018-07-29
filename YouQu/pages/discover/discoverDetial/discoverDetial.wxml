@@ -1,0 +1,14 @@
+<!--pages/discover/discoverDetial/discoverDetial.wxml-->
+<!-- <import src="../discover-grid-template/discover-grid-template.wxml" /> -->
+<view class='index-container'>
+  <view class='status-bar'></view>
+  <view class='index-title'>
+    <text class='index-title-back' bindtap='onBackTap'>返回</text>
+    <text class='index-title-text'>柚子乐</text>
+  </view>
+
+
+  <view class="indexDetial-container">
+    <!-- <template is="discoverGridTemplate" data="{{movies}}"></template> -->
+  </view>
+</view>

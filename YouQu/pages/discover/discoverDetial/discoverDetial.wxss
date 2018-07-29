@@ -1,0 +1,38 @@
+/* pages/discover/discoverDetial/discoverDetial.wxss */
+.status-bar {
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  height: 40rpx;
+  top: 0;
+  z-index: 1;
+}
+
+.index-title {
+  width: 100%;
+  height: 88rpx;
+  z-index: 1;
+  position: fixed;
+  top: 40rpx;
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+  background-color: #fff;
+}
+
+.index-title-back {
+  line-height: 88rpx;
+  font-size: 36rpx;
+  margin-left: 36rpx;
+}
+
+.index-title-text {
+  line-height: 88rpx;
+  font-size: 36rpx;
+  margin-left: 184rpx;
+}
+
+.indexDetial-container {
+  margin-top: 128rpx;
+  width: 100%;
+}
