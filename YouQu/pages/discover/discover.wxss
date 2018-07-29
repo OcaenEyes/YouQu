@@ -1,5 +1,6 @@
 /* pages/discover/discover.wxss */
 @import "discoverList-template/discoverList-template.wxss";
+@import "discover-grid-template/discover-grid-template.wxss";
 
 .status-bar {
   background-color: white;
@@ -40,8 +41,15 @@
 }
 
 .search-container input {
-  margin-left: 48rpx;
+  margin-left: 36rpx;
   width: 500rpx;
+  z-index: 0;
+}
+.cancel{
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 24rpx;
+  color: #999;
 }
 
 .placeholder {
@@ -57,4 +65,8 @@
 
 .mine-container-list {
   margin-bottom: 12rpx;
+}
+.search-pannel{
+  margin-top:20rpx;
+  /* top:76rpx ; */
 }

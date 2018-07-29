@@ -1,5 +1,6 @@
 <!--pages/discover/discover.wxml-->
 <import src="discoverList-template/discoverList-template.wxml" />
+<import src="discover-grid-template/discover-grid-template.wxml" />
 <view class='index-container'>
   <view class='status-bar'></view>
   <view class='index-title'>
@@ -8,8 +9,9 @@
   <view class='search-container'>
     <icon class='search-img' type='search' size='20' color='#999'></icon>
     <input type='text' placeholder='肖申克的救赎、初恋这件小事' placeholder-class='placeholder' bindfocus='onBindFocus' bindchange="onBindChange"></input>
+    <text class='cancel' bindtap='onCancelTap' wx:if="{{searchPannelShow}}">取消</text>
   </view>
-  <view class='mine-container'>
+  <view class='mine-container' wx:if="{{mineContainerShow}}">
     <view class='mine-container-list'>
       <template is='discoverListTemplate' data='{{...top250}}' />
     </view>
@@ -21,8 +23,8 @@
     </view>
 
   </view>
+</view>
 
-
-
-
+<view class='search-pannel' wx:if="{{searchPannelShow}}">
+  <template is="discoverGridTemplate" data="{{...searchResult}}"></template>
 </view>

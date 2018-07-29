@@ -5,8 +5,10 @@ Page({
   data: {
     top250: {},
     inTheaters: {},
-    comingSoon: {}
-
+    comingSoon: {},
+    searchResult:{},
+    mineContainerShow: true,
+    searchPannelShow: false,
   },
 
   // restful api json
@@ -45,7 +47,24 @@ Page({
     wx.showLoading({
       title: '资源加载中',
     });
-
+  },
+  onBindFocus: function(event) {
+    this.setData({
+      mineContainerShow: false,
+      searchPannelShow: true,
+    });
+  },
+  onBindChange:function(event){
+    var text = event.detail.value;
+    var searchUrl = app.globalData.doubanBase + "/v2/movie/search?q= "+text ;
+    this.getMovieListData(searchUrl,"searchResult","");
+  },
+  onCancelTap: function(event) {
+    this.setData({
+      mineContainerShow: true,
+      searchPannelShow: false,
+      searchResult:{},
+    });
   },
   processDoubanData: function(moviesDouban, settedKey, categoryTitle) {
     var movies = [];

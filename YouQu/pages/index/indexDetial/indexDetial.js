@@ -59,7 +59,13 @@ Page({
       })
       app.globalData.g_isPLayingMusic = false;
       app.globalData.g_currentMusicId = null;
-
+    });
+    wx.onBackgroundAudioStop(function() {
+      that.setData({
+        isPlayingMusic: false
+      })
+      app.globalData.g_isPLayingMusic = false;
+      app.globalData.g_currentMusicId = null;
     });
 
   },
